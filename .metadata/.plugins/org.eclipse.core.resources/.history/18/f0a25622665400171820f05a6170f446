@@ -1,0 +1,13 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.graphics.Texture;
+
+public class Campeao {
+	public Texture campeao;
+	public int posy = 0,posx = 0;
+	public enum estado{PARADO,ANDANDO,PULANDO};
+	
+	public void pular(Genesis genesis){
+		posy+=
+	}
+}

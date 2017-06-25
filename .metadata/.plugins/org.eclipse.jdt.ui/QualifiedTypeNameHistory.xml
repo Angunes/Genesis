@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.badlogic.gdx.physics.box2d.Body"/>
+<fullyQualifiedTypeName name="com.mygdx.game.Bioma"/>
+<fullyQualifiedTypeName name="com.mygdx.game.MyGdxGame"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.math.Vector2"/>
+<fullyQualifiedTypeName name="com.mygdx.game.Genesis"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.graphics.Texture"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.math.Rectangle"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.Gdx"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.Input.Keys"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.Input"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.graphics.g2d.Sprite"/>
+</qualifiedTypeNameHistroy>

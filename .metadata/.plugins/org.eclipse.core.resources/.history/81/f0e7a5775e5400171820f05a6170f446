@@ -1,0 +1,16 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+
+public class OutroChamp extends Sprite{
+	public enum State { FALLING, JUMPING, STANDING, RUNNING};
+    public State currentState;
+    public State previousState;
+    
+    private Texture champ;
+    
+    private float stateTimer;
+    private boolean runningRight;
+    private PlayScreen screen;
+ }

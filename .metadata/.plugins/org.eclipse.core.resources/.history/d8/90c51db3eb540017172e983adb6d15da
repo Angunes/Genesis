@@ -1,0 +1,14 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.graphics.Texture;
+
+public class Movel extends Sprite{
+	public Texture imgMovel;
+	public int estadoMovel;
+	
+	
+	public void pular(){
+		//corpo.y += 200*Gdx.graphics.getDeltaTime();
+	
+	}
+}

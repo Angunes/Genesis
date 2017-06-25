@@ -1,0 +1,14 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.graphics.Texture;
+
+public class Movel {
+	public Texture imgCampeao;
+	public int estado;
+	
+	
+	public void pular(){
+		//corpo.y += 200*Gdx.graphics.getDeltaTime();
+	
+	}
+}

@@ -1,0 +1,28 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
+
+public class Campeao extends DynamicGameObject{
+	public Campeao(float x, float y, float width, float height) {
+		super(x, y, width, height);
+		// TODO Auto-generated constructor stub
+	}
+	public static final int CAMPEAO_STATE_JUMP = 0;
+	public static final int CAMPEAO_STATE_FALL = 1;
+	public static final int CAMPEAO_STATE_HIT = 2;
+	public static final float CAMPEAO_JUMP_VELOCITY = 11;
+	public static final float CAMPEAO_MOVE_VELOCITY = 20;
+	public static final float CAMPEAO_WIDTH = 0.8f;
+	public static final float CAMPEAO_HEIGHT = 0.8f;
+	
+	
+	
+	
+}

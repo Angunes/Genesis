@@ -1,0 +1,22 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
+
+import java.util.Random;
+
+public class Mapa{
+	public int posX, posY;
+	public int tamX, tamY;
+	public int biom;
+	public boolean estado = false;
+	Texture bioma;
+	public void mudaEstado(){
+		estado = true;
+	}
+	
+}

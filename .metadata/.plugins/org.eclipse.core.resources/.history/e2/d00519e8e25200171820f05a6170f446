@@ -1,0 +1,43 @@
+package com.mygdx.game;
+
+public class asdas extends IteratingSystem {
+
+    @SuppressWarnings("unused")
+    private final static String TAG = PlayerJumpingSystem.class.getName();
+
+    // Variable declaration
+    @SuppressWarnings("unchecked")
+    private static final Family family = Family.all(
+            PositionComponent.class,
+            VelocityComponent.class,
+            PhysicsComponent.class,
+            PlayerComponent.class,
+            JumpingComponent.class).get();
+
+    public asdas () {
+        super(family);
+    }
+
+    @Override
+    protected void processEntity (Entity entity, float deltaTime) {
+        PositionComponent position = Mappers.position.get(entity);
+        VelocityComponent velocity = Mappers.velocity.get(entity);
+        PhysicsComponent physics = Mappers.physics.get(entity);
+
+        if (velocity.y > 0) {
+            // We are ascending
+            physics.body.applyLinearImpulse(0, -Constants.JUMP_FORCE, position.x, position.y, true);
+        }
+
+        if (velocity.y < 0) {
+            // We are descending
+            physics.body.applyLinearImpulse(0, Constants.JUMP_FORCE, position.x, position.y, true);
+        }
+
+        else if (velocity.y == 0) {
+            entity.remove(JumpingComponent.class);
+            Gdx.app.log(TAG, "JumpingComponent removed");
+        }
+    }
+
+}

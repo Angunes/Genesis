@@ -1,0 +1,18 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.Rectangle;
+
+public class Campeao {
+	public Texture imgCampeao;
+	public int posy = 0,posx = 0;
+	public enum estado{PARADO,ANDANDO,PULANDO};
+	public Rectangle campeao;
+	
+	
+	
+	public void pular(){
+		campeao.y += 200*Gdx.graphics.getDeltaTime();
+	}
+}

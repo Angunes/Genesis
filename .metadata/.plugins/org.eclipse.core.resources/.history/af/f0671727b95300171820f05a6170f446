@@ -1,0 +1,62 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
+
+public class Campeao extends DynamicGameObject{
+	public static final int CAMPEAO_STATE_JUMP = 0;
+	public static final int CAMPEAO_STATE_FALL = 1;
+	public static final int CAMPEAO_STATE_HIT = 2;
+	public static final float CAMPEAO_JUMP_VELOCITY = 11;
+	public static final float CAMPEAO_MOVE_VELOCITY = 20;
+	public static final float CAMPEAO_WIDTH = 0.8f;
+	public static final float CAMPEAO_HEIGHT = 0.8f;
+	
+	int state;
+	float stateTime;
+	
+	public Campeao(float x, float y, float width, float height) {
+		super(x, y,CAMPEAO_WIDTH, CAMPEAO_HEIGHT);
+		state = CAMPEAO_STATE_FALL;
+		stateTime = 0;
+	}
+	
+	public void update (float deltaTime) {
+		velocity.add(Genesis.gravity.x * deltaTime, Genesis.gravity.y * deltaTime);
+		position.add(velocity.x * deltaTime, velocity.y * deltaTime);
+		bounds.x = position.x - bounds.width / 2;
+		bounds.y = position.y - bounds.height / 2;
+
+		if (velocity.y > 0 && state != CAMPEAO_STATE_HIT) {
+			if (state != CAMPEAO_STATE_JUMP) {
+				state = CAMPEAO_STATE_JUMP;
+				stateTime = 0;
+			}
+		}
+
+		if (velocity.y < 0 && state != CAMPEAO_STATE_HIT) {
+			if (state != CAMPEAO_STATE_FALL) {
+				state = CAMPEAO_STATE_FALL;
+				stateTime = 0;
+			}
+		}
+
+		if (position.x < 0) position.x = Genesis.largura;
+		if (position.x > Genesis.largura) position.x = 0;
+
+		stateTime += deltaTime;
+	}
+	
+	public void pulo(){
+		velocity.y = CAMPEAO_JUMP_VELOCITY;
+		state = CAMPEAO_STATE_JUMP;
+		stateTime = 0;
+	}
+	
+}
